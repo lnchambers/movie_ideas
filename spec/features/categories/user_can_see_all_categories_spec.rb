@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "As a User" do
+describe "As a registered User" do
   before :each do
     @category = create(:category)
   end
