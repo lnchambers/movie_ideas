@@ -9,13 +9,11 @@ describe "As a registered User" do
       visit edit_movie_path(@movie)
       fill_in "movie[title]", with: "Eupanifahorious Goes To Mars"
       fill_in "movie[description]", with: "Read the title"
-      fill_in "movie[rating]", with: 10
       click_on "Update Movie"
 
       expect(current_path).to eq(movie_path(@movie))
       expect(page).to have_content("Eupanifahorious Goes To Mars")
       expect(page).to have_content("Read the title")
-      expect(page).to have_content("10")
     end
   end
 end
