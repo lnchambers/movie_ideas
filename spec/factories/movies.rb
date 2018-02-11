@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :movie do
-    title "MyText"
-    description "MyText"
-    rating 1
+    title "Opakawagalaga"
+    description "A woman destroys a fascmile gerbil"
+    rating 5
   end
 end
