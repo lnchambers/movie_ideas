@@ -8,6 +8,14 @@ describe "As a visitor" do
       click_on "Sign up"
 
       expect(current_path).to eq(new_user_path)
+
+      fill_in "user[username]", with: "Opakawagalaga"
+      fill_in "user[password]", with: "password123lol"
+      fill_in "user[email]", with: "thisismyemail@email.com"
+      click_on "Create User"
+
+      expect(current_path).to eq(user_path(User.last))
+      expect(page).to have_content("Welcome Opakawagalaga")
     end
   end
 end
