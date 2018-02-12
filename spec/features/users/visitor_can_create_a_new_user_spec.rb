@@ -16,6 +16,7 @@ describe "As a visitor" do
 
       expect(current_path).to eq(user_path(User.last))
       expect(page).to have_content("Welcome Opakawagalaga")
+      expect(page).to have_content("Total Ratings: 0")
     end
   end
 end

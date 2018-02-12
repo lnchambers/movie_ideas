@@ -4,4 +4,8 @@ class Movie < ApplicationRecord
   has_many :movie_categories
   has_many :categories, through: :movie_categories
   has_many :ratings
+
+  def total_rating
+    ratings.sum(:rating)
+  end
 end

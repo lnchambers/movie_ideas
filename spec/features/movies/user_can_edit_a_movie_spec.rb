@@ -14,6 +14,7 @@ describe "As a registered User" do
       expect(current_path).to eq(movie_path(@movie))
       expect(page).to have_content("Eupanifahorious Goes To Mars")
       expect(page).to have_content("Read the title")
+      expect(page).to have_content("0")
     end
   end
 end
