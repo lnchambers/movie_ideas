@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   post "/login", to: "sessions#create"
 
-  delete "/login", to: "sessions#destroy"
+  delete "/logout", to: "sessions#destroy"
 
   resources :movies
 
