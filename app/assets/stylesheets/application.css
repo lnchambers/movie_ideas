@@ -16,7 +16,9 @@
 
  body {
    margin: 0px;
-   background-image: url(https://idigitalcitizen.files.wordpress.com/2012/09/cast-facebook-timeline-cover-photo.jpg);
+   width: 1440px;
+   height: 730px;
+   background-image: url(curtain_background.jpeg);
    background-repeat: no-repeat;
-   background-size: cover;
+   background-position: center;
  }
