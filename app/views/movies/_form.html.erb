@@ -1,4 +1,4 @@
-<%= form_for [@movie, @image] do |f| %>
+<%= form_for @movie do |f| %>
 
 <%= f.label :title %>
 <%= f.text_field :title %>
@@ -9,8 +9,8 @@
 <%= f.label :rating %>
 <%= f.hidden_field :rating, :value => 0 %>
 
-<%= f.label :image %>
-<%= f.text_field :image %>
+<%= f.label :images %>
+<%= f.text_field :images %>
 
 <%= f.submit %>
 

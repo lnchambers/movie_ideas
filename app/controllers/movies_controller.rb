@@ -4,7 +4,6 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @image = Image.new
     @movie = Movie.new
   end
 
@@ -33,10 +32,9 @@ class MoviesController < ApplicationController
   end
 
   def create
-    binding.pry
-    Image.create!(url: params[:movie][:image]) if params[:movie][:image]
     @movie = Movie.new(movie_params)
     if @movie.save
+      @movie.images.create!(url: params[:movie][:images]) if params[:movie][:images]
       redirect_to movie_path(@movie)
     else
       redirect :new
