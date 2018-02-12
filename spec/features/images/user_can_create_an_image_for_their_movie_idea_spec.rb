@@ -12,7 +12,6 @@ describe "As a registered User" do
 
       expect(page).to have_content("Eupanifahorious Goes To Mars")
       expect(page).to have_content("Read the title")
-      expect(page).to have_content("0")
       expect(page).to have_content("http://www.hannibal.lib.mo.us/the-movies-logo-1[1].gif")
     end
   end
