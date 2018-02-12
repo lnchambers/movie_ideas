@@ -7,12 +7,6 @@ RSpec.describe Movie, type: :model do
     it { should validate_presence_of(:rating) }
     it { should have_many(:movie_categories) }
     it { should have_many(:categories).through(:movie_categories) }
-  end
-   describe "Relationships" do
-    it "has one image" do
-     movie = create(:movie)
-
-     expect(movie).to respond_to(:image)
-    end
+    it { should have_many(:images) }
   end
 end

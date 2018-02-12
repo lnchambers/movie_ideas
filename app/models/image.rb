@@ -1,4 +1,4 @@
 class Image < ApplicationRecord
   validates_presence_of :url
-  has_many :movies
+  belongs_to :movie
 end
