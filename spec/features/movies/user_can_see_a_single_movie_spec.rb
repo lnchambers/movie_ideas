@@ -9,7 +9,6 @@ describe "As a registered User" do
       visit movie_path(@movie)
       expect(page).to have_content(@movie.title)
       expect(page).to have_content(@movie.description)
-      expect(page).to have_content(@movie.rating)
     end
   end
 end
