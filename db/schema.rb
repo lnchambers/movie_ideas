@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20180212205959) do
   create_table "movies", force: :cascade do |t|
     t.text "title"
     t.text "description"
-    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,7 +48,6 @@ ActiveRecord::Schema.define(version: 20180212205959) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.integer "ratings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
