@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :user do
-    name "MyText"
-    password "MyText"
+    username "MyText"
+    password "Mahtext"
     email "MyText"
-    ratings 1
+    ratings 0
   end
 end
