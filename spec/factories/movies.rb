@@ -3,5 +3,6 @@ FactoryBot.define do
     title "Opakawagalaga"
     description "A woman destroys a fascmile gerbil"
     rating 0
+    :image
   end
 end
