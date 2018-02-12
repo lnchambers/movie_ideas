@@ -1,11 +1,11 @@
 require "rails_helper"
 
-describe "As a visitor" do
+describe "As a registered User" do
   before :each do
     @user = create(:user)
   end
-  describe "when I visit the root page" do
-    it "I can log in and see my personal info" do
+  describe "when I visit the users/:id page" do
+    it "I can log out" do
       visit root_path
 
       click_on "Log in"
@@ -19,6 +19,10 @@ describe "As a visitor" do
       expect(current_path).to eq(user_path(@user))
       expect(page).to have_content("Welcome #{@user.username}")
       expect(page).to have_content("Log Out")
+
+      click_on "Log Out"
+
+      expect(current_path).to eq(root_path)
     end
   end
 end
