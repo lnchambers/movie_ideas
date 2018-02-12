@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   margin: 0px;
+   background-image: url(https://idigitalcitizen.files.wordpress.com/2012/09/cast-facebook-timeline-cover-photo.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
