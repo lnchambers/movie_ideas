@@ -6,7 +6,7 @@ describe "As an Admin" do
   end
   describe "when I visit the categories/:id/edit page" do
     it "I can edit the name of the category" do
-      visit edit_category_path(@category)
+      visit edit_admin_category_path(@category)
 
       fill_in "category[name]", with: "Not your average category"
       click_on "Update Category"

@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
   def edit
-    binding.pry
     @user = User.find(params[:id])
     @movie = Movie.find(params[:id])
   end

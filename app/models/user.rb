@@ -4,7 +4,10 @@ class User < ApplicationRecord
   validates_uniqueness_of :email, :username
   has_many :ratings
 
+  enum role: ["default", "admin"]
+
   def total_ratings
     ratings.sum(:value)
   end
+
 end

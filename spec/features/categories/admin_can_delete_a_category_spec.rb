@@ -6,7 +6,7 @@ describe "As an Admin" do
   end
   describe "when I visit the categories page" do
     it "I can delete a category" do
-      visit categories_path
+      visit admin_categories_path
 
       expect(page).to have_content(@category.name)
 
