@@ -8,7 +8,7 @@ describe "As an admin" do
     it "I can see all categories" do
       Category.create!(name: "Smokely Oakley", image: "Smokely Oakley's Wokely Jokely")
 
-      visit admin_categories_path
+      visit categories_path
 
       expect(page).to have_content("One More Club")
       expect(page).to have_content("Smokely Oakley")
