@@ -37,7 +37,7 @@ class MoviesController < ApplicationController
       @movie.images.create!(url: params[:movie][:images]) if params[:movie][:images]
       redirect_to movie_path(@movie)
     else
-      redirect :new
+      render :new
     end
   end
 

@@ -6,6 +6,7 @@ describe "As an Admin" do
       visit new_category_path
 
       fill_in "category[name]", with: "Not your average category"
+      fill_in "category[image]", with: "This is your average image."
       click_on "Create Category"
 
       expect(page).to have_content("Not your average category")

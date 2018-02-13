@@ -2,8 +2,7 @@ class Movie < ApplicationRecord
   validates_presence_of :title, :description
   has_many :movie_images
   has_many :images, through: :movie_images
-  has_many :movie_categories
-  has_many :categories, through: :movie_categories
+  belongs_to :category
   has_many :ratings
 
   def total_rating
