@@ -3,6 +3,7 @@ require "rails_helper"
 describe "As a registered User" do
   before :each do
     @user = create(:user)
+    @category = create(:category)
   end
   describe "when I create a movie idea" do
     it "an image is stored with that movie" do

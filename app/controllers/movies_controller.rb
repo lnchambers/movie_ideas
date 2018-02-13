@@ -34,7 +34,6 @@ class MoviesController < ApplicationController
   end
 
   def create
-    binding.pry
     @movie = current_user.movies.new(movie_params)
     if @movie.save
       @movie.images.create!(url: params[:movie][:images]) if params[:movie][:images]
