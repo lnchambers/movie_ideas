@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-CATEGORIES = ["Horror", "Crime Fiction", "Fantasy", "Romance", "Thriller", "Western", "Action", "Animation", "Mystery", "Superhero", "Adventure", "Romantic Comedy", "SciFi", "Documentary", "Film noir", "Comedy-Drama", "War", "Disaster", "Apocalyptic", "Comedy", "Musical"]
+CATEGORIES = ["Crime Fiction", "Horror", "Fantasy", "Romance", "Thriller", "Western", "Action", "Animation", "Mystery", "Superhero", "Adventure", "Romantic Comedy", "SciFi", "Documentary", "Film noir", "Comedy-Drama", "War", "Disaster", "Apocalyptic", "Comedy", "Musical"]
 
 CATEGORIES.each do |category|
   Category.create!(name: category, image: "http://articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png")
