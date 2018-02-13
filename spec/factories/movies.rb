@@ -3,5 +3,6 @@ FactoryBot.define do
     title "Opakawagalaga"
     description "A woman destroys a fascmile gerbil"
     category
+    user
   end
 end

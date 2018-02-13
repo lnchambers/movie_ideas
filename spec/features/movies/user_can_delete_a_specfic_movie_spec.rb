@@ -3,11 +3,10 @@ require "rails_helper"
 describe "A a registered User" do
   before :each do
     @movie = create(:movie)
-    @user = create(:user)
   end
   describe "when I visit the movie/:id page" do
     it "I can delete the movie from the show page" do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@movie.user)
       visit movie_path(@movie)
 
       click_on "Delete"

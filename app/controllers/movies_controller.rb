@@ -1,9 +1,11 @@
 class MoviesController < ApplicationController
   def edit
+    @user = current_user
     @movie = Movie.find(params[:id])
   end
 
   def new
+    @user = current_user
     @movie = Movie.new
   end
 
@@ -32,7 +34,8 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = current_user.movie.new(movie_params)
+    binding.pry
+    @movie = current_user.movies.new(movie_params)
     if @movie.save
       @movie.images.create!(url: params[:movie][:images]) if params[:movie][:images]
       redirect_to movie_path(@movie)

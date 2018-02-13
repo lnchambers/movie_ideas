@@ -4,6 +4,7 @@ class Movie < ApplicationRecord
   has_many :images, through: :movie_images
   belongs_to :category
   has_many :ratings
+  belongs_to :user
 
   def total_rating
     ratings.sum(:value)
