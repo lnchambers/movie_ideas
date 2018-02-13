@@ -1,11 +1,9 @@
 class MoviesController < ApplicationController
   def edit
-    @user = User.find(params[:id])
     @movie = Movie.find(params[:id])
   end
 
   def new
-    @user = User.find(params[:id])
     @movie = Movie.new
   end
 
@@ -30,11 +28,11 @@ class MoviesController < ApplicationController
   def destroy
     movie = Movie.find(params[:id])
     movie.destroy
-    redirect_to user_movie_path(user)
+    redirect_to user_movies_path(current_user)
   end
 
   def create
-    @movie = Movie.new(movie_params)
+    @movie = current_user.movie.new(movie_params)
     if @movie.save
       @movie.images.create!(url: params[:movie][:images]) if params[:movie][:images]
       redirect_to movie_path(@movie)

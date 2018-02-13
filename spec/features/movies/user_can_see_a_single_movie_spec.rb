@@ -7,7 +7,9 @@ describe "As a registered User" do
       @user = create(:user)
     end
     it "I can see a single movie that I created" do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
       visit movie_path(@movie)
+      
       expect(page).to have_content(@movie.title)
       expect(page).to have_content(@movie.description)
       expect(page).to have_content(@movie.total_rating)

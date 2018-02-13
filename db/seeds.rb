@@ -7,3 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 CATEGORIES = ["Horror", "Crime Fiction", "Fantasy", "Romance", "Thriller", "Western", "Action", "Animation", "Mystery", "Superhero", "Adventure", "Romantic Comedy", "SciFi", "Documentary", "Film noir", "Comedy-Drama", "War", "Disaster", "Apocalyptic", "Comedy", "Musical"]
+
+CATEGORIES.each do |category|
+  Category.create!(name: category, image: "http://articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png")
+end
+
+User.create!(username: "Username", email: "myemail@email.com", password: "Password")
+User.create!(username: "Admin", email: "myemail@email.com", password: "Password", role: 1)

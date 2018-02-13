@@ -6,6 +6,7 @@ describe "As a registered User" do
   end
   describe "when I visit the movies/new page" do
     it "I can create a new movie idea" do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
       visit new_user_movie_path(@user)
 
       fill_in "movie[title]", with: "Eupanifahorious Goes To Mars"
