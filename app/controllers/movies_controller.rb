@@ -29,6 +29,7 @@ class MoviesController < ApplicationController
 
   def destroy
     movie = Movie.find(params[:id])
+    binding.pry
     movie.destroy
     redirect_to user_movies_path(current_user)
   end

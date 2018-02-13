@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show, :index, :update, :destroy, :create]
 
-  resources :users, shallow: true do
-    resources :movies do
+  resources :users do
+    resources :movies, shallow: true do
       post "/ratings", to: "ratings#create"
     end
   end
