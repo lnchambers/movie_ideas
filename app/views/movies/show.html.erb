@@ -7,4 +7,4 @@ Total Ratings: <%= @movie.total_rating %>
 
 <%= link_to "Edit", edit_movie_path(@movie) %>
 <%= link_to "Delete", movie_path(@movie), method: "delete" %>
-<%= button_to "Upvote", movie_ratings_path(@movie), params: {"user_id" => current_user, "value" => 1} %>
+<%= button_to "Upvote", movie_ratings_path(@movie) %>

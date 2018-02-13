@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20180213162834) do
   create_table "ratings", force: :cascade do |t|
     t.bigint "movie_id"
     t.bigint "user_id"
-    t.integer "value"
+    t.integer "value", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_ratings_on_movie_id"

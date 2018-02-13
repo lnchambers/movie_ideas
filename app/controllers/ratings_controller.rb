@@ -1,13 +1,11 @@
 class RatingsController < ApplicationController
+
   def create
-    Rating.create!(rating_params) if Movie.find(params[:movie_id]) == nil && User.find(current_user) == nil
+    binding.pry
+    movie = Movie.find(params[:movie_id])
+    curent_user.ratings.create(movie: movie)
 
-    redirect_to movie_path(params[:movie_id])
+    redirect_to movie_path(movie)
   end
 
-  private
-
-  def rating_params
-    params.require(:ratings).permit(:movie_id, :user_id, :value)
-  end
 end

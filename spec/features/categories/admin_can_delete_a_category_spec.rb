@@ -7,8 +7,9 @@ describe "As an Admin" do
   describe "when I visit the admin/categories page" do
     it "I can delete a category" do
       admin = User.create!(username: "Pass", password: "User", email: "Eman", role: 1)
-      visit admin_categories_path
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+      visit admin_categories_path
 
       expect(page).to have_content(@category.name)
 
