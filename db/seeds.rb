@@ -12,5 +12,5 @@ CATEGORIES.each do |category|
   Category.create!(name: category, image: "http://articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png")
 end
 
-User.create!(username: "Username", email: "myemail@email.com", password: "Password")
-User.create!(username: "Admin", email: "myemail@email.com", password: "Password", role: 1)
+User.create!(username: "User", email: "user@email.com", password: "User")
+User.create!(username: "Admin", email: "admin@email.com", password: "Admin", role: 1)
