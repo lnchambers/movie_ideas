@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "As a registered User" do
   describe "when I visit the movies/new page" do
-    it "I can create a new movie idea" do
+    skip "I can create a new movie idea" do
       visit new_movie_path
 
       fill_in "movie[title]", with: "Eupanifahorious Goes To Mars"

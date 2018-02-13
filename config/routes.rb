@@ -8,13 +8,13 @@ Rails.application.routes.draw do
 
   delete "/logout", to: "sessions#destroy"
 
-  resources :movies do
-    post "/ratings", to: "ratings#create"
-  end
-
   resources :categories
 
-  resources :users
+  resources :users do
+    resources :movies do
+      post "/ratings", to: "ratings#create"
+    end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

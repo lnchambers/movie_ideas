@@ -5,6 +5,6 @@ class User < ApplicationRecord
   has_many :ratings
 
   def total_ratings
-    ratings.sum(:rating)
+    ratings.sum(:value)
   end
 end

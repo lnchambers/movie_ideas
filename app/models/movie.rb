@@ -6,6 +6,6 @@ class Movie < ApplicationRecord
   has_many :ratings
 
   def total_rating
-    ratings.sum(:rating)
+    ratings.sum(:value)
   end
 end

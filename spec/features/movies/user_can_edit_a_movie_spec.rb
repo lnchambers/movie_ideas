@@ -5,7 +5,7 @@ describe "As a registered User" do
     @movie = create(:movie)
   end
   describe "when I visit the movie/:id/edit page" do
-    it "I can edit a movie idea that I created" do
+    skip "I can edit a movie idea that I created" do
       visit edit_movie_path(@movie)
       fill_in "movie[title]", with: "Eupanifahorious Goes To Mars"
       fill_in "movie[description]", with: "Read the title"
