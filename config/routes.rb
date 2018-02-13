@@ -15,12 +15,12 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :index, :update, :destroy, :create]
 
   resources :users do
-    resources :movies, shallow: true do
-      post "/ratings", to: "ratings#create"
-    end
+    resources :movies
   end
 
-  resources :movies
+  resources :movies do
+    post "/ratings", to: "ratings#create"
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
