@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :categories
   end
 
+  resources :categories, only: [:show, :index]
+
   resources :users, shallow: true do
     resources :movies do
       post "/ratings", to: "ratings#create"
