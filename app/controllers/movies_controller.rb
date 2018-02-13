@@ -1,9 +1,12 @@
 class MoviesController < ApplicationController
   def edit
+    binding.pry
+    @user = User.find(params[:id])
     @movie = Movie.find(params[:id])
   end
 
   def new
+    @user = User.find(params[:id])
     @movie = Movie.new
   end
 
@@ -28,7 +31,7 @@ class MoviesController < ApplicationController
   def destroy
     movie = Movie.find(params[:id])
     movie.destroy
-    redirect_to movies_path
+    redirect_to user_movie_path(user)
   end
 
   def create

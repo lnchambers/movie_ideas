@@ -3,6 +3,7 @@ require "rails_helper"
 describe "A a registered User" do
   before :each do
     @movie = create(:movie)
+    @user = create(:user)
   end
   describe "when I visit the movie/:id page" do
     it "I can delete the movie from the show page" do

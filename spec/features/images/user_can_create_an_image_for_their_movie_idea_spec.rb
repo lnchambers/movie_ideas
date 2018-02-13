@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "As a registered User" do
   describe "when I create a movie idea" do
-    skip "an image is stored with that movie" do
+    it "an image is stored with that movie" do
       visit new_movie_path
 
       fill_in "movie[title]", with: "Eupanifahorious Goes To Mars"

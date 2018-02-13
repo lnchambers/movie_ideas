@@ -1,6 +1,5 @@
 class RatingsController < ApplicationController
   def create
-    binding.pry
     Rating.create!(rating_params) if Movie.find(params[:movie_id]) == nil && User.find(current_user) == nil
 
     redirect_to movie_path(params[:movie_id])

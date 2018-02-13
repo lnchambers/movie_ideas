@@ -4,6 +4,7 @@ describe "As a registered User" do
   describe "when I visit the movie/:id page" do
     before :each do
       @movie = create(:movie)
+      @user = create(:user)
     end
     it "I can see a single movie that I created" do
       visit movie_path(@movie)

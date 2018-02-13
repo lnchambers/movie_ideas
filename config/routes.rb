@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :users do
+  resources :users, shallow: true do
     resources :movies do
       post "/ratings", to: "ratings#create"
     end
