@@ -1,5 +1,20 @@
-<% @movies.each do |movie| %>
-  <%= movie.title %>
-  <%= movie.description %>
-  <%= movie.total_rating %>
-<% end %>
+<section class="movie-container">
+  <%= render partial: "nav" %>
+  <header class="header">
+    All Movie Ideas
+  </header>
+  <% @movies.each do |movie| %>
+    <section class="movie-card">
+      <section class="movie-title">
+        <%= link_to movie.title, movie_path(movie) %>
+      </section>
+      <section class="movie-side">
+        <%= movie.description %><br>
+        Total Ratings: <%= movie.total_rating %><br>
+      </section>
+    </section>
+  <% end %>
+  <section class="create">
+    Have your own idea? <%= link_to "Make it!", new_movie_path %>
+  </section>
+</section>
