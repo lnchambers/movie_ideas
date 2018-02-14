@@ -33,6 +33,10 @@ class MoviesController < ApplicationController
 
   def destroy
     movie = Movie.find(params[:id])
+    rating = Rating.where(movie_id: params[:id])
+    rating.destroy_all
+    movie_image = MovieImage.where(movie_id: params[:id])
+    movie_image.destroy_all
     movie.destroy
     redirect_to user_movies_path(current_user)
   end
