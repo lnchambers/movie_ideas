@@ -10,51 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212205959) do
+ActiveRecord::Schema.define(version: 20180213162834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.text "name"
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "image"
   end
 
   create_table "images", force: :cascade do |t|
     t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "movie_id"
-    t.index ["movie_id"], name: "index_images_on_movie_id"
   end
 
-  create_table "movie_categories", force: :cascade do |t|
+  create_table "movie_images", force: :cascade do |t|
     t.bigint "movie_id"
-    t.bigint "category_id"
-    t.index ["category_id"], name: "index_movie_categories_on_category_id"
-    t.index ["movie_id"], name: "index_movie_categories_on_movie_id"
+    t.bigint "image_id"
+    t.index ["image_id"], name: "index_movie_images_on_image_id"
+    t.index ["movie_id"], name: "index_movie_images_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
     t.text "title"
     t.text "description"
-    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_movies_on_category_id"
+    t.index ["user_id"], name: "index_movies_on_user_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "user_id"
+    t.integer "value", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_ratings_on_movie_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.integer "ratings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 0
   end
 
-  add_foreign_key "images", "movies"
-  add_foreign_key "movie_categories", "categories"
-  add_foreign_key "movie_categories", "movies"
+  add_foreign_key "movie_images", "images"
+  add_foreign_key "movie_images", "movies"
+  add_foreign_key "movies", "categories"
+  add_foreign_key "movies", "users"
+  add_foreign_key "ratings", "movies"
+  add_foreign_key "ratings", "users"
 end

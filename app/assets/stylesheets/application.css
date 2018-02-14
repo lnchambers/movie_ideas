@@ -16,15 +16,12 @@
 
  body {
    margin: 0px;
-   width: 1440px;
-   height: 735px;
  }
 
- .main-container {
+ .body-container {
    width: 100%;
    height: 100%;
    background-image: url(curtain_background.jpeg);
-   background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
    display: flex;
@@ -35,6 +32,17 @@
  .home {
    width: 50%;
    height: 40%;
-   background-color: #dbc6c4;
+   border: 10px ridge #A05350;
+ }
+
+ .main-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   width: 80%;
+   height: 40%;
+   min-height: 720px;
+   background-color: #fff;
    border: 10px ridge #A05350;
  }

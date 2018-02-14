@@ -1,9 +1,10 @@
 <%= @movie.title %>
 <%= @movie.description %>
-<%= @movie.rating %>
+Total Ratings: <%= @movie.total_rating %>
 <% @movie.images.each do |image| %>
   <%= image.url %>
 <% end %>
 
-<%= link_to "Edit", edit_movie_path(@movie) %>
-<%= link_to "Delete", movie_path(@movie), method: "delete" %>
+<%= render partial: "utility" if user_owned? %>
+
+<%= button_to "Upvote", movie_ratings_path(@movie) %>

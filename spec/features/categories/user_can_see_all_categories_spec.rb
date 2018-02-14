@@ -1,12 +1,12 @@
 require "rails_helper"
 
-describe "As a registered User" do
+describe "As an user" do
   before :each do
     @category = create(:category)
   end
   describe "when I visit the categories index" do
     it "I can see all categories" do
-      Category.create!(name: "Smokely Oakley")
+      Category.create!(name: "Smokely Oakley", image: "Smokely Oakley's Wokely Jokely")
 
       visit categories_path
 

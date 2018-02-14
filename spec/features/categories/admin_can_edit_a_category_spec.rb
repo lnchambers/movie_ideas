@@ -4,9 +4,12 @@ describe "As an Admin" do
   before :each do
     @category = create(:category)
   end
-  describe "when I visit the categories/:id/edit page" do
+  describe "when I visit the admin/categories/:id/edit page" do
     it "I can edit the name of the category" do
-      visit edit_category_path(@category)
+      admin = User.create!(username: "Pass", password: "User", email: "Eman", role: 1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+      visit edit_admin_category_path(@category)
 
       fill_in "category[name]", with: "Not your average category"
       click_on "Update Category"

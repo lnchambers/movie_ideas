@@ -1,5 +1,14 @@
 class User < ApplicationRecord
   has_secure_password
-  validates_presence_of :email, :ratings, :username, :password
+  validates_presence_of :email, :username, :password
   validates_uniqueness_of :email, :username
+  has_many :ratings
+  has_many :movies
+
+  enum role: ["default", "admin"]
+
+  def total_ratings
+    ratings.sum(:value)
+  end
+
 end

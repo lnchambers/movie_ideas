@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MovieIdeas</title>
+    <title>Movie Ideas</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,8 +9,10 @@
   </head>
 
   <body>
-    <main class="main-container">
-      <%= yield %>
+    <main class="body-container">
+      <section class="main-container">
+        <%= yield %>
+      </section>
     </main>
   </body>
 </html>
