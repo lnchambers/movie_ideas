@@ -64,7 +64,7 @@
    width: 80%;
    height: 40%;
    min-height: 730px;
-   background-color: #b7a19e;
+   background-color: #888;
    border: 10px ridge #A05350;
  }
 
@@ -188,3 +188,28 @@
    width: 100px;
    background-color: #A05350;
  }
+
+ .upvote input {
+   background: #d6656a;
+   background: linear-gradient(#964946, #d6656a);
+   padding: 5px 10px;
+   border-radius: 11px;
+   color: #fcf962;
+   font-size: 13px;
+   text-decoration: none;
+   outline: none;
+   cursor: hand;
+   }
+
+.upvote input:hover {
+   background: #432322;
+   color: #ccc;
+   }
+
+.upvote input:active {
+   background: #964946;
+   }
+
+.categories {
+  
+}

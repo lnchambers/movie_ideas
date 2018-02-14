@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     post "/ratings", to: "ratings#create"
   end
 
+  post "/movie-images", to: "movieimages#create"
+
   get "/users/:id/movies", to: "user#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

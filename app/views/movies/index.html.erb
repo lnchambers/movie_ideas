@@ -5,7 +5,7 @@
   <% @movies.each do |movie| %>
     <section class="movie-card">
       <section class="movie-title">
-        <%= link_to movie.title, movie_path(movie) %>
+        <center><%= link_to movie.title, movie_path(movie) %></center>
       </section>
       <section class="movie-side">
         <%= movie.description %><br>

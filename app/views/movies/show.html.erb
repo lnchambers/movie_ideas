@@ -1,12 +1,14 @@
 <section class="movie-container">
   <section class="movie-card">
     <section class="movie-title">
-      <%= @movie.title %>
+      <center><%= @movie.title %></center>
     </section>
     <section class="movie-side">
       <section class="movie-description">
         <%= @movie.description %><br>
-        Total Ratings: <%= @movie.total_rating %><br>
+        Total Ratings: <%= @movie.total_rating %>
+      </section>
+      <section class="upvote">
         <%= button_to "Upvote", movie_ratings_path(@movie) %><br>
       </section>
       <section class="utility">

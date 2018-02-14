@@ -7,7 +7,7 @@
 <%= f.text_field :description %>
 
 <%= f.label :images %>
-<%= f.text_field :images %>
+<%= f.collection_select :image_id, MovieImage.all, :id, :image_id %>
 
 <%= f.label :category %>
 <%= f.collection_select :category_id, Category.all, :id, :name %>

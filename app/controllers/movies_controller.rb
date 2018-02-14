@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @user = current_user
+    @images = Images.all
     @movie = Movie.new
   end
 
