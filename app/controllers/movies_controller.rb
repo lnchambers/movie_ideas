@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
   def edit
-    @user = current_user
-    @movie = Movie.find(params[:id])
+    @movie = current_user.movies.find(params[:id])
   end
 
   def new
