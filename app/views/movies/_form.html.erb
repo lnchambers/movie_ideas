@@ -6,11 +6,19 @@
 <%= f.label :description %>
 <%= f.text_field :description %>
 
-<%= f.label :images %>
-<%= f.collection_select :image_id, MovieImage.all, :id, :image_id %>
-
 <%= f.label :category %>
 <%= f.collection_select :category_id, Category.all, :id, :name %>
+
+<p>Check the box to add images:</p>
+<div>
+  <%= hidden_field_tag 'idea[image_ids][]', nil %>
+  <% @images.each do |image| %>
+  <div>
+    <%= check_box_tag('movie[image_ids][]', image.id, @movie.image_ids.include?(image.id), id: "image-#{image.id}") %>
+    <label for=<%= "image-#{image.id}" %>><%= image_tag image.url, width: 100 %></label>
+  </div>
+  <% end %>
+</div>
 
 <%= f.hidden_field :user_id, :value => current_user.id %>
 

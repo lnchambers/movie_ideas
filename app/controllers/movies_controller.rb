@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @images = Images.all
+    @images = Image.all
     @movie = Movie.new
   end
 
@@ -40,7 +40,7 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.new(movie_params)
     if @movie.save
-      @movie.images.create!(url: params[:movie][:images]) if params[:movie][:images]
+      create_movie_image_relationship if params[:movie][:image_ids]
       redirect_to movie_path(@movie)
     else
       render :new
@@ -51,5 +51,11 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:title, :description, :category_id, :user_id)
+  end
+
+  def create_movie_image_relationship
+    params[:movie][:image_ids].each do |image_id|
+      MovieImage.create!(movie_id: @movie.id, image_id: image_id)
+    end
   end
 end

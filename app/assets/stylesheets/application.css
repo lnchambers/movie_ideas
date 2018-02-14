@@ -211,5 +211,30 @@
    }
 
 .categories {
-  
+
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.image-header {
+  font-family: 'Pacifico';
+  font-size: 20pt;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  margin: 10px;
 }
