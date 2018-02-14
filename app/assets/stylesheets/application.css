@@ -25,6 +25,10 @@
    color: #FCFA62;
  }
 
+ a:hover {
+   color: #FEF8D5;
+ }
+
  .body-container {
    width: 100%;
    height: 100%;
