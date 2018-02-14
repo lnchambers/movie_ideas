@@ -1,0 +1,11 @@
+<nav class="nav">
+  <section class="nav-links">
+    <%= link_to "Movies", movies_path %>
+    <%= link_to "Categories", categories_path %>
+  </section>
+  <section class="nav-user">
+    Welcome, <%= current_user.username %>!
+    <%= link_to "My Movie Ideas", user_movies_path(current_user) %>
+    <%= link_to "Log Out", logout_path, method: "delete" %>
+  </section>
+</nav>
