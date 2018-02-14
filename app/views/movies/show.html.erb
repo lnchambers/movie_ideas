@@ -1,10 +1,16 @@
-<%= @movie.title %>
-<%= @movie.description %>
-Total Ratings: <%= @movie.total_rating %>
-<% @movie.images.each do |image| %>
-  <%= image.url %>
-<% end %>
-
-<%= render partial: "utility" if user_owned? %>
-
-<%= button_to "Upvote", movie_ratings_path(@movie) %>
+<section class="movie-container">
+  <section class="movie">
+    <%= @movie.title %>
+  </section>
+  <section class="movie-side">
+    <section class="movie-description">
+      <%= @movie.description %>
+      Total Ratings: <%= @movie.total_rating %>
+      <%= button_to "Upvote", movie_ratings_path(@movie) %>
+      <% @movie.images.each do |image| %>
+        <img src="<%= image.url %>">
+      <% end %>
+    </section>
+    <%= render partial: "utility" if user_owned? %>
+  </section>
+</section>
