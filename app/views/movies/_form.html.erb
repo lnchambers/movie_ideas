@@ -9,7 +9,7 @@
 <%= f.label :category %>
 <%= f.collection_select :category_id, Category.all, :id, :name %>
 
-<br>Select the images that inspire you:
+<br>Select the images that inspire you (Pick at least one):
 <section class="images">
   <%= hidden_field_tag 'movie[image_ids][]', nil %>
   <% @images.each do |image| %>

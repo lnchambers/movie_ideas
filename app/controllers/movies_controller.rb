@@ -55,7 +55,7 @@ class MoviesController < ApplicationController
 
   def create_movie_image_relationship
     params[:movie][:image_ids].each do |image_id|
-      MovieImage.create!(movie_id: @movie.id, image_id: image_id)
+      MovieImage.create!(movie_id: @movie.id, image_id: image_id) if !image_id.empty?
     end
   end
 end
