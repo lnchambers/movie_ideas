@@ -142,14 +142,49 @@
    font-size: 35px;
  }
 
+ .movie-description {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 200px;
+ }
+
  .utility {
    display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: flex-end;
+   width: 100%;
+   height: 50px;
  }
 
  .utility-edit {
+   width: 50%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+ }
 
+ .utility-edit a{
+   display:flex;
+   justify-content: center;
+   width: 100px;
+   background-color: #A05350;
  }
 
  .utility-delete {
+   width: 50%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+ }
 
+ .utility-delete a {
+   display:flex;
+   justify-content: center;
+   width: 100px;
+   background-color: #A05350;
  }

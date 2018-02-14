@@ -1,16 +1,27 @@
 <section class="movie-container">
-  <section class="movie">
-    <%= @movie.title %>
-  </section>
-  <section class="movie-side">
-    <section class="movie-description">
-      <%= @movie.description %><br>
-      Total Ratings: <%= @movie.total_rating %><br>
-      <%= button_to "Upvote", movie_ratings_path(@movie) %><br>
-      <% @movie.images.each do |image| %>
-        <img src="<%= image.url %>">
-      <% end %>
+  <section class="movie-card">
+    <section class="movie-title">
+      <%= @movie.title %>
     </section>
-    <%= render partial: "utility" if user_owned? %>
+    <section class="movie-side">
+      <section class="movie-description">
+        <%= @movie.description %><br>
+        Total Ratings: <%= @movie.total_rating %><br>
+        <%= button_to "Upvote", movie_ratings_path(@movie) %><br>
+      </section>
+      <section class="utility">
+        <%= render partial: "utility" if user_owned? %>
+      </section>
+    </section>
+  </section>
+</section>
+<section class="images">
+  <header class="image-header">
+    Screenshots
+  </header>
+  <section class="image">
+    <% @movie.images.each do |image| %>
+      <img src="<%= image.url %>">
+    <% end %>
   </section>
 </section>
