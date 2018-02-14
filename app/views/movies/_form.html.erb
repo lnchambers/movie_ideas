@@ -9,16 +9,16 @@
 <%= f.label :category %>
 <%= f.collection_select :category_id, Category.all, :id, :name %>
 
-<p>Select the images that inspire you:</p>
-<div>
+<br>Select the images that inspire you:
+<section class="images">
   <%= hidden_field_tag 'movie[image_ids][]', nil %>
   <% @images.each do |image| %>
-  <div>
+  <section class="image">
     <%= check_box_tag('movie[image_ids][]', image.id, @movie.image_ids.include?(image.id), id: "image-#{image.id}") %>
     <label for=<%= "image-#{image.id}" %>><%= image_tag image.url, width: 100 %></label>
-  </div>
+  </section>
   <% end %>
-</div>
+</section>
 
 <%= f.hidden_field :user_id, :value => current_user.id %>
 

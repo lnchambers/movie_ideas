@@ -217,9 +217,10 @@
 .images {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  /* flex-direction: column; */
   width: 100%;
   align-items: center;
+  justify-content: center;
 }
 
 .image-header {

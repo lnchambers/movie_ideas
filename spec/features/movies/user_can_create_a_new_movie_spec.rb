@@ -12,6 +12,7 @@ describe "As a registered User" do
 
       fill_in "movie[title]", with: "Eupanifahorious Goes To Mars"
       fill_in "movie[description]", with: "Read the title"
+      check 
       click_on "Create Movie"
 
       expect(page).to have_content("Eupanifahorious Goes To Mars")
