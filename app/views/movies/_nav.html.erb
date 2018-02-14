@@ -6,6 +6,7 @@
   <section class="nav-user">
     Welcome, <%= current_user.username %>!
     <%= link_to "My Movie Ideas", user_movies_path(current_user) %>
+    <%= link_to "Admin Dashboard", admin_dashboard_path if current_admin? %>
     <%= link_to "Log Out", logout_path, method: "delete" %>
   </section>
 </nav>
