@@ -19,9 +19,9 @@ class MoviesController < ApplicationController
   end
 
   def show
-    if !params[:user_id]
+    if !current_user
       redirect_to movies_path
-    elsif params[:user_id].to_i == current_user.id
+    else
       @movie = Movie.find(params[:id])
     end
   end
