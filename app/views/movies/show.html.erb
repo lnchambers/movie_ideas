@@ -1,31 +1,28 @@
 <section class="movie-container">
   <header class="header">Movie Idea by <%= @movie.user.username %></header>
-  <section class="movie-card">
-    <section class="movie-title">
-      <center><%= @movie.title %></center>
-    </section>
-    <section class="movie-side">
-      <section class="movie-description">
-        <%= @movie.description %><br>
-        Total Ratings: <%= @movie.total_rating %>
-      </section>
-      <section class="upvote">
-        <%= button_to "Upvote", movie_ratings_path(@movie) %><br>
-      </section>
-      <section class="utility">
-        <%= render partial: "edit" if user_owned? %>
-        <%= render partial: "delete" if user_owned? || current_admin? %>
+    <section class="movie-card">
+      <section class="movie">
+        <center class="title"><%= link_to @movie.title, movie_path(@movie) %></center>
+        <center><%= @movie.description %><br></center>
+        Total Ratings: <%= @movie.total_rating %><br>
+        <section class="upvote">
+          <%= button_to "Upvote", movie_ratings_path(@movie) %><br>
+        </section>
+        <section class="utility">
+          <%= render partial: "edit" if user_owned? %>
+          <%= render partial: "delete" if user_owned? || current_admin? %>
+        </section>
       </section>
     </section>
   </section>
-</section>
-<section class="images">
-  <header class="header">
-    Screenshots
-  </header>
-  <section class="image">
-    <% @movie.images.each do |image| %>
-      <img src="<%= image.url %>">
-    <% end %>
+  <section class="images">
+    <header class="header">
+      Screenshots
+    </header>
+    <section class="image">
+      <% @movie.images.each do |image| %>
+        <img src="<%= image.url %>">
+      <% end %>
+    </section>
   </section>
 </section>

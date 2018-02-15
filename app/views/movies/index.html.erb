@@ -7,11 +7,9 @@
   </section>
   <% @movies.each do |movie| %>
     <section class="movie-card">
-      <section class="movie-title">
-        <center><%= link_to movie.title, movie_path(movie) %></center>
-      </section>
-      <section class="movie-side">
-        <%= movie.description %><br>
+      <section class="movie">
+        <center class="title"><%= link_to movie.title, movie_path(movie) %></center>
+        <center><%= movie.description %><br></center>
         Total Ratings: <%= movie.total_rating %><br>
       </section>
     </section>
