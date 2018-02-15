@@ -4,6 +4,10 @@ class Admin::ImagesController < Admin::BaseController
     @image = Image.new
   end
 
+  def index
+    @images = Image.all
+  end
+
   def create
     render :index if !current_admin?
     @image = Image.new(image_params)

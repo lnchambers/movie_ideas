@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, only: [:show, :index, :edit, :new]
+    resources :images, only: [:create, :new, :index]
   end
 
   resources :categories, only: [:show, :index, :update, :destroy, :create]
@@ -27,10 +28,6 @@ Rails.application.routes.draw do
   get "/users/:id/movies", to: "user#index"
 
   get "/admin/dashboard", to: "admin/dashboard#index"
-
-  namespace :admin do
-    resources :images, only: [:create, :new]
-  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
