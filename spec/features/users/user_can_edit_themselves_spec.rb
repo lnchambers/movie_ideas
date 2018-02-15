@@ -14,15 +14,5 @@ describe "As a registered User" do
 
       expect(page).to have_content("Welcome Opakawagalaga")
     end
-
-    it "I can edit my email" do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
-      visit edit_user_path(@user)
-
-      fill_in "user[email]", with: "Opakawagalaga"
-      click_on "Update User"
-
-      expect(page).to have_content("Email: Opakawagalaga")
-    end
   end
 end

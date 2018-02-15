@@ -200,14 +200,10 @@
    border-radius: 11px;
    color: #fcf962;
    font-size: 13px;
+   min-width: 100px;
    text-decoration: none;
    outline: none;
    cursor: hand;
-   }
-
-.upvote input:hover {
-   background: #432322;
-   color: #ccc;
    }
 
 .upvote input:active {
@@ -240,7 +236,6 @@
 .images {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -261,4 +256,16 @@
   height: 250px;
   border-radius: 5px;
   margin: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input {
+  margin: 5px;
+  min-width: 100px;
+  max-width: 200px;
 }
