@@ -6,11 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico" rel="stylesheet">
   </head>
 
   <body>
     <main class="body-container">
       <section class="main-container">
+        <%= render partial: "nav" if current_user%>
         <%= yield %>
       </section>
     </main>

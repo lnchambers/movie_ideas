@@ -1,10 +1,11 @@
 class MoviesController < ApplicationController
   def edit
+    @images = Image.all
     @movie = current_user.movies.find(params[:id])
   end
 
   def new
-    @user = current_user
+    @images = Image.all
     @movie = Movie.new
   end
 
@@ -25,6 +26,9 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie.update(movie_params)
     if @movie.save
+      movie_image = MovieImage.where(movie_id: params[:id])
+      movie_image.destroy_all
+      create_movie_image_relationship if params[:movie][:image_ids]
       redirect_to movie_path(@movie)
     else
       render :edit
@@ -33,6 +37,10 @@ class MoviesController < ApplicationController
 
   def destroy
     movie = Movie.find(params[:id])
+    rating = Rating.where(movie_id: params[:id])
+    rating.destroy_all
+    movie_image = MovieImage.where(movie_id: params[:id])
+    movie_image.destroy_all
     movie.destroy
     redirect_to user_movies_path(current_user)
   end
@@ -40,7 +48,7 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.new(movie_params)
     if @movie.save
-      @movie.images.create!(url: params[:movie][:images]) if params[:movie][:images]
+      create_movie_image_relationship if params[:movie][:image_ids]
       redirect_to movie_path(@movie)
     else
       render :new
@@ -49,7 +57,13 @@ class MoviesController < ApplicationController
 
   private
 
-  def movie_params
-    params.require(:movie).permit(:title, :description, :category_id, :user_id)
-  end
+    def movie_params
+      params.require(:movie).permit(:title, :description, :category_id, :user_id)
+    end
+
+    def create_movie_image_relationship
+      params[:movie][:image_ids].each do |image_id|
+        MovieImage.create!(movie_id: @movie.id, image_id: image_id) if !image_id.empty?
+      end
+    end
 end

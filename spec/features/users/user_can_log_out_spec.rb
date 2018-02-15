@@ -20,6 +20,8 @@ describe "As a registered User" do
       expect(page).to have_content("Welcome #{@user.username}")
       expect(page).to have_content("Log Out")
 
+      visit movies_path
+
       click_on "Log Out"
 
       expect(current_path).to eq(root_path)

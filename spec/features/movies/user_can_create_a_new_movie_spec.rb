@@ -4,6 +4,7 @@ describe "As a registered User" do
   before :each do
     @user = create(:user)
     @category = create(:category)
+    @image = create(:image)
   end
   describe "when I visit the movies/new page" do
     it "I can create a new movie idea" do
@@ -12,6 +13,7 @@ describe "As a registered User" do
 
       fill_in "movie[title]", with: "Eupanifahorious Goes To Mars"
       fill_in "movie[description]", with: "Read the title"
+      check("image-1")
       click_on "Create Movie"
 
       expect(page).to have_content("Eupanifahorious Goes To Mars")
