@@ -12,7 +12,7 @@ describe "As a registered User" do
       fill_in "movie[description]", with: "Read the title"
       click_on "Update Movie"
 
-      expect(current_path).to eq(movie_path(@movie))
+      expect(current_path).to eq(movies_path)
       expect(page).to have_content("Eupanifahorious Goes To Mars")
       expect(page).to have_content("Read the title")
       expect(page).to have_content("0")
