@@ -144,6 +144,7 @@
    overflow: scroll;
    color: #fff;
    background-color: #000;
+   border-radius: 1px;
  }
 
  .create {
@@ -253,6 +254,7 @@
 .categories {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
 }
 

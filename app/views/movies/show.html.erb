@@ -4,7 +4,8 @@
       <section class="movie">
         <center class="title"><%= link_to @movie.title, movie_path(@movie) %></center>
         <center><%= @movie.description %><br></center>
-        Total Ratings: <%= @movie.total_rating %><br>
+        <center>Total Ratings: <%= @movie.total_rating %><br></center>
+        <center>Category: <%= @movie.category.name %></center>
         <section class="upvote">
           <%= button_to "Upvote", movie_ratings_path(@movie) %><br>
         </section>
