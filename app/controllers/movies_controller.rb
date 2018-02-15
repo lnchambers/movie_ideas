@@ -19,7 +19,11 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    if !params[:user_id]
+      redirect_to movies_path
+    elsif params[:user_id].to_i == current_user.id
+      @movie = Movie.find(params[:id])
+    end
   end
 
   def update
