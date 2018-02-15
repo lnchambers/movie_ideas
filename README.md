@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If you are interested in seeing what this repo is all about, go to the link below.
 
-Things you may want to cover:
+https://movieideas.herokuapp.com/movies
 
-* Ruby version
+Feel free to clone this down and play along!
 
-* System dependencies
+Run `git clone origin https://github.com/lnchambers/movie_ideas.git` from your terminal
 
-* Configuration
+Make sure to run `bundle install` from the root directory
 
-* Database creation
+Run `rails db:setup` (or `rake db:setup`)
 
-* Database initialization
+If you plan on running the testing suite, run `rails db:test:prepare` before running `rspec` from the root directory.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run `rails s` and take your favorite browser for a spin to localhost:3000
