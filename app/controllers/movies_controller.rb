@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   def edit
+    @images = Image.all
     @movie = current_user.movies.find(params[:id])
   end
 
@@ -25,6 +26,9 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie.update(movie_params)
     if @movie.save
+      movie_image = MovieImage.where(movie_id: params[:id])
+      movie_image.destroy_all
+      create_movie_image_relationship if params[:movie][:image_ids]
       redirect_to movie_path(@movie)
     else
       render :edit
