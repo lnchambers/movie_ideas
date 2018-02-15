@@ -57,13 +57,13 @@ class MoviesController < ApplicationController
 
   private
 
-  def movie_params
-    params.require(:movie).permit(:title, :description, :category_id, :user_id)
-  end
-
-  def create_movie_image_relationship
-    params[:movie][:image_ids].each do |image_id|
-      MovieImage.create!(movie_id: @movie.id, image_id: image_id) if !image_id.empty?
+    def movie_params
+      params.require(:movie).permit(:title, :description, :category_id, :user_id)
     end
-  end
+
+    def create_movie_image_relationship
+      params[:movie][:image_ids].each do |image_id|
+        MovieImage.create!(movie_id: @movie.id, image_id: image_id) if !image_id.empty?
+      end
+    end
 end

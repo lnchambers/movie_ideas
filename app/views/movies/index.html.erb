@@ -2,6 +2,9 @@
   <header class="header">
     All Movie Ideas
   </header>
+  <section class="create">
+    Have your own idea? <%= link_to "Make it!", new_movie_path %>
+  </section>
   <% @movies.each do |movie| %>
     <section class="movie-card">
       <section class="movie-title">

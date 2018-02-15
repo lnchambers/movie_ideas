@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def user_owned?
-    @movie.user_id == current_user.id || current_admin?
+    @movie.user_id == current_user.id
   end
 end

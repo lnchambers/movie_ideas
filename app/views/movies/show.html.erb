@@ -13,7 +13,8 @@
         <%= button_to "Upvote", movie_ratings_path(@movie) %><br>
       </section>
       <section class="utility">
-        <%= render partial: "utility" if user_owned? %>
+        <%= render partial: "edit" if user_owned? %>
+        <%= render partial: "delete" if user_owned? || current_admin? %>
       </section>
     </section>
   </section>
