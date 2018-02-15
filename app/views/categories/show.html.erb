@@ -2,7 +2,7 @@
 <% @category.movies.each do |movie| %>
 <section class="movie-card">
   <section class="movie">
-    <%= link_to movie.title, movie_path(movie) %>
+    <center class="title"><%= link_to movie.title, movie_path(movie) %></center>
     <center><%= movie.description %></center>
   </section>
 </section>
