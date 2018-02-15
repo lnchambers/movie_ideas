@@ -1,8 +1,10 @@
+<header class="header">All Categories</header>
+<header class="sub-header">Movies Inside</header>
 <section class="categories">
   <% @categories.each do |category|  %>
   <section class="category">
     <section class="category-title">
-      <%= link_to category.name, category_path(category) %>
+      <center><%= link_to category.name, category_path(category) %></center>
     </section>
   </section>
 <% end %>

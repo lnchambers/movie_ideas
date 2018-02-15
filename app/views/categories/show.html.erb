@@ -1,8 +1,9 @@
 <header class="header"><%= @category.name %></header>
 <% @category.movies.each do |movie| %>
-<section class="category">
-  <section class="category-title">
+<section class="movie-card">
+  <section class="movie">
     <%= link_to movie.title, movie_path(movie) %>
+    <center><%= movie.description %></center>
   </section>
 </section>
 <% end %>
