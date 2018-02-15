@@ -1,3 +1,9 @@
-<% @categories.each do |category|  %>
-  <%= category.name %>
+<section class="categories">
+  <% @categories.each do |category|  %>
+  <section class="category">
+    <section class="category-title">
+      <%= link_to category.name, category_path(category) %>
+    </section>
+  </section>
 <% end %>
+</section>
