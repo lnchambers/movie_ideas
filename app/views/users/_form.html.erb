@@ -1,13 +1,16 @@
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+<section class="form-container">
+  <%= form_for @user do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username, :class => "form-field" %>
+<br>
+    <%= f.label :email %>
+    <br>
+    <%= f.text_field :email, :class => "form-field" %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit %>
-
-<% end %>
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => "form-field" %>
+    <section class="submit-container">
+      <%= f.submit :class => "submit-button" %>
+    </section>
+  <% end %>
+</section>
