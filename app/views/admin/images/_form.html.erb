@@ -1,8 +1,13 @@
-<%= form_for ["admin", @image] do |f| %>
+<section class="form-container">
+  <%= form_for ["admin", @image] do |f| %>
 
-<%= f.label :url %>
-<%= f.text_field :url %>
+  <%= f.label :url %>
+  <br>
+  <%= f.text_field :url, :class => "form-field" %>
 
-<%= f.submit %>
+  <section class="submit-container">
+    <%= f.submit :class => "submit-button" %>
+  </section>
 
-<% end %>
+  <% end %>
+</section>

@@ -1,27 +1,32 @@
-<%= form_for @movie do |f| %>
+<section class="form-movie-container">
+  <center><%= form_for @movie do |f| %>
 
-<%= f.label :title %>
-<%= f.text_field :title %>
+  <%= f.label :title %>
+  <br>
+  <%= f.text_field :title, :class => "form-field" %>
+  <br>
+  <%= f.label :description %>
+  <br>
+  <%= f.text_field :description, :class => "form-field" %>
+  <br>
+  <%= f.label :category %>
+  <br>
+  <%= f.collection_select :category_id, Category.all, :id, :name %></center>
 
-<%= f.label :description %>
-<%= f.text_field :description %>
+  <br>Select the images that inspire you (Pick at least one):
+  <section class="images">
+    <%= hidden_field_tag 'movie[image_ids][]', nil %>
+    <% @images.each do |image| %>
+    <section class="image">
+      <%= check_box_tag('movie[image_ids][]', image.id, @movie.image_ids.include?(image.id), id: "image-#{image.id}") %>
+      <label for=<%= "image-#{image.id}" %>><%= image_tag image.url, width: 100 %></label>
+    </section>
+    <% end %>
+  </section>
 
-<%= f.label :category %>
-<%= f.collection_select :category_id, Category.all, :id, :name %>
-
-<br>Select the images that inspire you (Pick at least one):
-<section class="images">
-  <%= hidden_field_tag 'movie[image_ids][]', nil %>
-  <% @images.each do |image| %>
-  <section class="image">
-    <%= check_box_tag('movie[image_ids][]', image.id, @movie.image_ids.include?(image.id), id: "image-#{image.id}") %>
-    <label for=<%= "image-#{image.id}" %>><%= image_tag image.url, width: 100 %></label>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <section class="submit-container">
+    <%= f.submit :class => "submit-button" %>
   </section>
   <% end %>
 </section>
-
-<%= f.hidden_field :user_id, :value => current_user.id %>
-
-<%= f.submit %>
-
-<% end %>

@@ -300,14 +300,86 @@
   margin: 10px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.form-container {
+  border: 1px solid #a05250;
+  background: #a05250;
+  border-radius: 8px;
+  box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+  vertical-align: middle;
+  min-width:300px;
+  padding:20px;
+  width:300px;
+  max-height: 301px;
+  color: #fcf962;
+ }
 
-form input {
-  margin: 5px;
-  min-width: 100px;
-  max-width: 200px;
-}
+.form-movie-container {
+  border: 1px solid #a05250;
+  background: #a05250;
+  border-radius: 8px;
+  box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+  vertical-align: middle;
+  min-width:300px;
+  padding:20px;
+  width: 90%;
+  color: #fcf962;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ }
+
+.form-field {
+  border: 1px solid #000000;
+  background: #888888;
+  border-radius: 4px;
+  color: #000000;
+  box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
+  padding:8px;
+  margin-bottom:20px;
+  width: 250px;
+ }
+
+.form-field:focus {
+  background: #cccccc;
+  color: #000000;
+ }
+
+.form-container h2 {
+  text-shadow: #fdf2e4 0 1px 0;
+  font-size:18px;
+  margin: 0 0 10px 0;
+  font-weight:bold;
+  text-align:center;
+ }
+
+.submit-container {
+  margin:8px 0;
+  text-align:right;
+ }
+
+.submit-button {
+  border: 1px solid #000000;
+  background: linear-gradient(#fcf962, #c2be4b);
+  border-radius: 5px;
+  box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+  text-shadow: #888888 0 1px 0;
+  color: #000000;
+  padding: 8.5px 18px;
+  font-size: 14px;
+  vertical-align: middle;
+ }
+
+ .submit-button:hover {
+  border: 1px solid #000000;
+  text-shadow: #888888 0 1px 0;
+  background: linear-gradient(#c2be4b, #fcf962);
+  color: #000000;
+ }
+
+.submit-button:active {
+   text-shadow: #888888 0 1px 0;
+   border: 1px solid #000000;
+   background: #fcf962;
+   color: #000000;
+ }

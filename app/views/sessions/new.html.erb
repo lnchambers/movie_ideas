@@ -1,8 +1,16 @@
 <header class="header">Login</header>
-<%= form_tag login_path do %>
+<section class="form-container">
+  <%= form_tag login_path do %>
+
   <%= label_tag :username %>
-  <%= text_field_tag :username %>
+  <%= text_field_tag :username, "", :class => "form-field" %>
+
   <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Log In" %>
-<% end %>
+  <%= password_field_tag :password, "", :class => "form-field" %>
+
+  <section class="submit-container">
+    <%= submit_tag "Log In", :class => "submit-button"  %>
+  </section>
+  <% end %>
+</section>
+<footer></footer>
